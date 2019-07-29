@@ -9,9 +9,7 @@ const bodyParser = require('body-parser');
 const apiRoutes = require('../routes/api');
 const subRoutes = require('../routes/subscriber');
 
-const file = path.parse(__filename).name;
-
-const netlifyFuncs = `/.netlify/functions/${file}`;
+const netlifyFuncs = `/.netlify/functions/subscribe`;
 const app = express();
 
 app.use(cors());
