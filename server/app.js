@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const apiRoutes = require('../routes/api');
 const subRoutes = require('../routes/subscriber');
 
-const netlifyFuncs = '/.netlify/functions/server';
+const netlifyFuncs = '/.netlify/functions/app';
 const app = express();
 
 app.use(cors());
@@ -26,7 +26,7 @@ router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 
 router.post('/', (req, res) => res.json({ postBody: req.body }));
 
-app.use('/.netlify/functions/server', router);  // path must route to lambda
+app.use(netlifyFuncs, router);  // path must route to lambda
 
 // app.use(`${netlifyFuncs}/api`, apiRoutes);
 // app.use(`${netlifyFuncs}/api/subscribe`, subRoutes);
