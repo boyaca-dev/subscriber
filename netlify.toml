@@ -2,7 +2,7 @@
   command = "npm install && npm run build"
   functions = "functions"
 
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server/:splat"
+[redirects]
+  from = "/api/*"
+  to = "/.netlify/functions/subscribe/:splat"
   status = 200
