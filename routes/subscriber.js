@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const axios = require('axios');
 
@@ -24,7 +26,7 @@ router.post('/', async (req, res) => {
   };
   return axios.post(`https://api.mailerlite.com/api/v2/groups/${mailerGroup}/subscribers`,
     data, config)
-    .then(result => res.send({ success: true, data: result.data }))
+    .then(() => res.send({ success: true, data }))
     .catch(err => {
       return res.send({ success: false, error: err ? err.message || err.toString() : 'Error' });
     });
