@@ -3,8 +3,8 @@ const serverless = require('serverless-http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const apiRoutes = require('./routes/api');
-const subRoutes = require('./routes/subscriber');
+const apiRoutes = require('../routes/api');
+const subRoutes = require('../routes/subscriber');
 
 const netlifyFuncs = '/.netlify/functions/server';
 const app = express();

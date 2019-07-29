@@ -1,4 +1,4 @@
-const app = require('./app');
+const app = require('./server/app');
 
 app.listen(8080, () => {
   console.log('Subscriber app running');
